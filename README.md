@@ -120,3 +120,7 @@
 
 
 3. Fine-tuning a Local LLM (Typhoon-7B) [`Hugging Face`]: [![Open In Colab](https://raw.githubusercontent.com/pvateekul/2110531_DSDE_2026s1/main/image/colab-badge.svg)](https://colab.research.google.com/github/pvateekul/2110531_DSDE_2026s1/blob/main/code/Week06_GenerativeAI/9_LLM_Typhoon7b_Finetuning_Huggingface.ipynb)
+
+### Data Engineering Assignment
+- [PySpark Homework](code/Week11_Spark/assignment) : Must submit via grader.  See assignment in MyCourseVille
+
