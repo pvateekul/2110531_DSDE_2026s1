@@ -6,7 +6,9 @@
         <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.13.0/mapbox-gl.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
-    <script src='https://cdn.jsdelivr.net/npm/@deck.gl/jupyter-widget@~8.9.*/dist/index.js'></script>
+    <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.14.0/dist/maplibre-gl.css" />
+    <script src='https://cdn.jsdelivr.net/npm/@deck.gl/jupyter-widget@~9.3.*/dist/index.js'></script>
+    <link rel="stylesheet" href=https://cdn.jsdelivr.net/npm/@deck.gl/widgets@~9.3.*/dist/stylesheet.css />
     <style>
     body {
   margin: 0;
@@ -22,6 +24,13 @@
 #deck-container canvas {
   z-index: 1;
   background: none;
+}
+
+#deck-container .error_text {
+  color: red;
+  background: none;
+  position: absolute;
+  z-index: 100;
 }
     </style>
   </head>
@@ -533,7 +542,7 @@
       ],
       "getPosition": "@@=coordinates",
       "getRadius": 500,
-      "id": "65e952be-d8c8-4d37-8657-88225f454614",
+      "id": "6cfc263b-af61-4a82-a937-b230a41b720b",
       "pickable": true
     }
   ],
@@ -555,8 +564,8 @@
       jsonInput,
       tooltip,
       customLibraries,
-      configuration
-    });
+      configuration,
+          });
 
   </script>
 </html>

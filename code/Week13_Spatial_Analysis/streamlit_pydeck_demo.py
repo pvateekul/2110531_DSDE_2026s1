@@ -20,9 +20,15 @@ map_layer_type = st.sidebar.radio('Map Type', ["ScatterplotLayer", "HeatmapLayer
 
 map_style = st.sidebar.radio(
     "Map Style",
-    ["dark", "light", "streets", "satellite"]
+    ["dark", "light", "streets"]
 )
-map_style = "mapbox://styles/mapbox/" + map_style + "-v9"
+# Carto basemaps need no API key
+MAP_STYLES = {
+    "dark": pdk.map_styles.CARTO_DARK,
+    "light": pdk.map_styles.CARTO_LIGHT,
+    "streets": pdk.map_styles.CARTO_ROAD,
+}
+map_style = MAP_STYLES[map_style]
 
 opacity = st.sidebar.slider('Opacity', min_value=0.0, max_value=1.0, value=0.5)
 radius_scale = st.sidebar.slider('Radius Scale', min_value=1.0, max_value=10.0, value=5.0)

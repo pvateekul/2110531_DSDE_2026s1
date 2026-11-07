@@ -12,7 +12,7 @@ DATA_URL = ('https://s3-us-west-2.amazonaws.com/streamlit-demo-data/uber-raw-dat
 def load_data(nrows):
     data = pd.read_csv(DATA_URL, nrows=nrows)
     lowercase = lambda x: str(x).lower()
-    data.rename(lowercase, axis='columns', inplace=True)
+    data = data.rename(columns=lowercase)
     data[DATE_COLUMN] = pd.to_datetime(data[DATE_COLUMN])
     return data
 
@@ -23,16 +23,15 @@ data = load_data(10000)
 st.sidebar.header('Map Settings')
 map_style = st.sidebar.selectbox(
     'Select Base Map Style',
-    options=['Dark', 'Light', 'Road', 'Satellite'],
+    options=['Dark', 'Light', 'Road'],
     index=0
 )
 
-# Define map style dictionary
+# Define map style dictionary (Carto basemaps need no API key)
 MAP_STYLES = {
-    'Dark': 'mapbox://styles/mapbox/dark-v10',
-    'Light': 'mapbox://styles/mapbox/light-v10',
-    'Road': 'mapbox://styles/mapbox/streets-v11',
-    'Satellite': 'mapbox://styles/mapbox/satellite-v9'
+    'Dark': pdk.map_styles.CARTO_DARK,
+    'Light': pdk.map_styles.CARTO_LIGHT,
+    'Road': pdk.map_styles.CARTO_ROAD,
 }
 
 if st.checkbox('Show raw data'):
