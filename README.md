@@ -123,4 +123,4 @@
 
 ### Data Engineering Assignment
 - [PySpark Homework](code/Week11_Spark/assignment) : Must submit via grader.  See assignment in MyCourseVille
-
+- [Lakehouse Homework](code/Week09_Intro_to_DataEng/assignment) : Must submit via grader.  See assignment in MyCourseVille
